@@ -2,6 +2,7 @@ from flask import Flask, request, render_template, make_response
 from pyzbar.pyzbar import decode
 import cv2
 import io
+import qrcode
 
 app = Flask(__name__)
 
