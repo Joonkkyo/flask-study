@@ -44,7 +44,6 @@ def upload():
     code = decode(img)
     url = code[0].data.decode("utf-8")
 
-    # return f"<a href={url}QR코드가기</a>"
     return "<script> alert('이동합니다.'); window.location.href='{url}'; </script>"
 
 
@@ -59,18 +58,7 @@ def gen():
             gen(),
             mimetype='multipart/x-mixed-replace; boundary=frame'
         )
-
-
-@app.route('/test')
-def test():
-    html = """
-    <h1> 동영상 테스트 </h1>
-    <img src=http://192.168.1.15:8000/video_feed width=320 height=240>
-    <img src=http://192.168.1.161:8000/video_feed width=320 height=240>
     
-    """
-    return html
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=8000)
